@@ -61,7 +61,7 @@ final class Criteria implements ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset)
     {
         return $this->has($offset);
     }
@@ -69,7 +69,7 @@ final class Criteria implements ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetGet($offset): Criterion
+    public function offsetGet(mixed $offset): Criterion
     {
         return $this->items[$offset];
     }
@@ -77,7 +77,7 @@ final class Criteria implements ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value)
     {
         if (! $value instanceof Criterion) {
             throw CannotAddCriterion::notACriterionInstance();
@@ -89,7 +89,7 @@ final class Criteria implements ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset)
     {
         unset($this->items[$offset]);
     }
